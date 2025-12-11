@@ -12,10 +12,10 @@
        ========================================= */
 
     /* --- Primary Brand Colors --- */
-    --col-deep: #332D56;   /* Main Text, Navigation Bar, Footer, Headings, Button Hover */
-    --col-muted: #4E6688;  /* Subtitles, Hero Gradient (End), Secondary Text */
-    --col-teal: #71C0BB;   /* Buttons, Links, Accents, Borders, Date Text */
-    --col-lime: #E3EEB2;   /* Welcome Section BG, Schedule Page BG, RSVP Form BG */
+    --col-deep: #355C7D;   /* Main Text, Navigation Bar, Footer, Headings, Button Hover 332D56 355C7D */
+    --col-muted: #EA5455;  /* Subtitles, Hero Gradient (End), Secondary Text 4E6688 */
+    --col-teal: #F67280;   /* Buttons, Links, Accents, Borders, Date Text 71C0BB*/
+    --col-lime: #C06C84;   /* Welcome Section BG, Schedule Page BG, RSVP Form BG */
 
     /* --- Secondary / Section Colors --- */
     --col-blue-light: #B1D0E0; /* Quick Info Section BG, Schedule Cards BG */

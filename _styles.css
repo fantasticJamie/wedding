@@ -6,37 +6,18 @@
 }
 
 :root {
-    /* =========================================
-       COLOR PALETTE & USAGE GUIDE
-       Change these hex codes to update the site
-       ========================================= */
-
-    /* --- Primary Brand Colors --- */
-    --col-deep: #332D56;   /* Main Text, Navigation Bar, Footer, Headings, Button Hover */
-    --col-muted: #4E6688;  /* Subtitles, Hero Gradient (End), Secondary Text */
-    --col-teal: #71C0BB;   /* Buttons, Links, Accents, Borders, Date Text */
-    --col-lime: #E3EEB2;   /* Welcome Section BG, Schedule Page BG, RSVP Form BG */
-
-    /* --- Secondary / Section Colors --- */
-    --col-blue-light: #B1D0E0; /* Quick Info Section BG, Schedule Cards BG */
-    --col-blue-pale: #dbeaf2;  /* Schedule "Highlight" Card Gradient End */
-    --col-info-bg: #eefcfb;    /* "Good to know" Info Box Background */
-    
-    /* --- Base Colors --- */
-    --col-bg: #fafafa;     /* Main Page Body Background */
-    --col-white: #ffffff;  /* Text on Dark Backgrounds, Standard White Elements */
-    --col-input-bg: #fafdff; /* Form Input Background on Focus */
-
-    /* --- Form Status Colors --- */
-    --col-success-text: #155724; /* Success Message Text */
-    --col-error-text: #721c24;   /* Error Message Text */
-    --col-error-bg: #f8d7da;     /* Error Message Background */
+    /* Define your custom palette for easy tweaks */
+    --col-muted: #FFDBA4;
+    --col-teal: #FFB3B3;
+    --col-lime: #FFE9AE;
+    --col-bg: #C1EFFF;
+    --col-white: #ffffff;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--col-deep);
+    color: var(--col-deep); /* Deep Navy */
     background-color: var(--col-bg);
 }
 
@@ -46,7 +27,7 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* Navigation - Dark background with Teal normal / Lime hover */
 nav {
     background-color: var(--col-deep);
     box-shadow: 0 2px 10px rgba(51, 45, 86, 0.2);
@@ -67,7 +48,7 @@ nav {
 .nav-link {
     display: inline-block;
     padding: 20px 10px;
-    color: var(--col-teal);
+    color: var(--col-teal); /* Teal (Green) normally */
     text-decoration: none;
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
@@ -77,14 +58,14 @@ nav {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--col-lime);
+    color: var(--col-lime); /* Lime (Yellow) on hover */
     border-bottom-color: var(--col-lime);
 }
 
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--col-deep) 0%, var(--col-muted) 100%);
-    color: var(--col-white);
+    color: white;
     padding: 100px 20px;
     text-align: center;
 }
@@ -120,14 +101,14 @@ nav {
     font-weight: 300;
     margin-bottom: 20px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    color: var(--col-teal);
+    color: var(--col-teal); /* Teal (Green) */
 }
 
 .hero-content .subtitle {
     font-size: 1.5em;
     margin-bottom: 15px;
     opacity: 1;
-    color: var(--col-white);
+    color: white;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -139,6 +120,14 @@ nav {
 }
 
 /* Sections */
+.quick-info .container {
+    text-align: center;
+}
+
+.quick-info .button {
+    display: inline-block;
+    margin-top: 25px;
+}
 section {
     padding: 80px 20px;
 }
@@ -150,7 +139,7 @@ section h2 {
     text-align: center;
 }
 
-/* Welcome Section */
+/* Welcome Section - Lime background */
 .welcome {
     background-color: var(--col-lime);
 }
@@ -163,21 +152,11 @@ section h2 {
     color: var(--col-deep);
 }
 
-/* Quick Info / RSVP Section */
+/* Info Cards - CHANGED: Section background to #B1D0E0, Cards reverted to White */
 .quick-info {
-    background-color: var(--col-blue-light);
+    background-color: #B1D0E0; /* Your requested Blue */
 }
 
-.quick-info .container {
-    text-align: center;
-}
-
-.quick-info .button {
-    display: inline-block;
-    margin-top: 25px;
-}
-
-/* Info Cards (if used elsewhere) */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -186,7 +165,7 @@ section h2 {
 }
 
 .info-card {
-    background-color: var(--col-white);
+    background-color: #ffffff; /* Reverted to White for contrast */
     padding: 35px 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(51, 45, 86, 0.08);
@@ -211,7 +190,7 @@ section h2 {
     font-weight: 500;
 }
 
-/* CTA Section (Original Block) */
+/* CTA Section - Lime background */
 .cta {
     background: var(--col-lime);
     color: var(--col-deep);
@@ -235,7 +214,7 @@ section h2 {
     display: inline-block;
     padding: 16px 45px;
     background-color: var(--col-teal);
-    color: var(--col-white);
+    color: white;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
@@ -252,18 +231,18 @@ section h2 {
 
 .cta .button {
     background-color: var(--col-deep);
-    color: var(--col-white);
+    color: white;
 }
 
 .cta .button:hover {
-    background-color: var(--col-white);
+    background-color: white;
     color: var(--col-deep);
 }
 
 /* Page Header */
 .page-header {
     background: linear-gradient(135deg, var(--col-deep) 0%, var(--col-muted) 100%);
-    color: var(--col-white);
+    color: white;
     padding: 80px 20px;
     text-align: center;
 }
@@ -280,21 +259,23 @@ section h2 {
     opacity: 0.9;
 }
 
-/* Schedule Page */
+/* Schedule Page - Lime background */
 .schedule {
     background-color: var(--col-lime);
 }
 
+/* CHANGED: Replaced #f8f9fa with #B1D0E0 */
 .day-section {
     margin-bottom: 60px;
     padding: 40px;
-    background-color: var(--col-blue-light);
+    background-color: #B1D0E0; /* Changed to Blue */
     border-radius: 12px;
     border-left: 5px solid var(--col-muted);
 }
 
+/* CHANGED: Adjusted gradient so it doesn't clash */
 .day-section.highlight {
-    background: linear-gradient(135deg, var(--col-blue-light) 0%, var(--col-blue-pale) 100%);
+    background: linear-gradient(135deg, #B1D0E0 0%, #dbeaf2 100%); /* Blue gradient */
     border: 2px solid var(--col-lime);
     border-left: 5px solid var(--col-teal);
 }
@@ -323,7 +304,7 @@ section h2 {
     gap: 30px;
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Softer divider */
 }
 
 .timeline-item:last-child {
@@ -334,7 +315,7 @@ section h2 {
 
 .timeline-item .time {
     font-weight: 700;
-    color: var(--col-deep);
+    color: var(--col-deep); /* Darker text for better contrast on blue */
     font-size: 1.1em;
 }
 
@@ -344,7 +325,7 @@ section h2 {
 }
 
 .timeline-item .event p {
-    color: var(--col-deep);
+    color: var(--col-deep); /* Darker text for better contrast */
     margin-bottom: 8px;
 }
 
@@ -354,7 +335,7 @@ section h2 {
 }
 
 .info-box {
-    background-color: var(--col-info-bg);
+    background-color: #eefcfb;
     border-left: 4px solid var(--col-teal);
     padding: 20px;
     margin-top: 40px;
@@ -370,7 +351,7 @@ section h2 {
     color: var(--col-muted);
 }
 
-/* Travel Page */
+/* Travel Page - Lime background */
 .travel-info {
     background-color: var(--col-lime);
 }
@@ -420,7 +401,7 @@ section h2 {
     border-bottom-color: var(--col-teal);
 }
 
-/* RSVP Form */
+/* RSVP Form - Lime background */
 .rsvp-form {
     background-color: var(--col-lime);
 }
@@ -465,14 +446,14 @@ section h2 {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--col-teal);
-    background-color: var(--col-input-bg);
+    background-color: #fafdff;
 }
 
 .form-group button {
     width: 100%;
     padding: 15px;
     background: var(--col-deep);
-    color: var(--col-white);
+    color: white;
     border: none;
     border-radius: 6px;
     font-size: 1.1em;
@@ -493,16 +474,16 @@ section h2 {
 }
 
 #formStatus .success {
-    color: var(--col-success-text);
+    color: #155724;
     padding: 15px;
     background-color: var(--col-lime);
     border-radius: 4px;
 }
 
 #formStatus .error {
-    color: var(--col-error-text);
+    color: #721c24;
     padding: 15px;
-    background-color: var(--col-error-bg);
+    background-color: #f8d7da;
     border-radius: 4px;
 }
 
@@ -525,7 +506,7 @@ section h2 {
 /* Footer */
 footer {
     background-color: var(--col-deep);
-    color: var(--col-white);
+    color: white;
     padding: 40px 20px;
     text-align: center;
 }
