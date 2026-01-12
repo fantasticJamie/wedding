@@ -318,9 +318,6 @@ section h2 {
 }
 
 .timeline-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 30px;
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -558,16 +555,6 @@ footer p {
     .nav-link {
         padding: 15px 10px;
         font-size: 0.9em;
-    }
-    
-    .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .timeline-item .time {
-        font-size: 1em;
-        color: var(--col-teal);
     }
     
     section {

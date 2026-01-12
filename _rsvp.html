@@ -30,12 +30,12 @@
                     
                     <!-- Replace YOUR_FORM_ID with your actual Formspree form ID -->
                     <!-- You'll get this after signing up at formspree.io -->
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="rsvpForm">
+                    <form action="https://formspree.io/f/mblnzrev" method="POST" id="rsvpForm">
                         
                         <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Full name">
-                            <small>Please submit one form per person attending</small>
+                            <label for="name">Your Name(s) *</label>
+                            <input type="text" id="name" name="name" required placeholder="Full name or names if responding for multiple people">
+                            <small>If responding for you and a guest/partner, please include both names</small>
                         </div>
 
                         <div class="form-group">
@@ -47,9 +47,19 @@
                             <label for="attendance">Will you be attending? *</label>
                             <select id="attendance" name="attendance" required>
                                 <option value="">Please select...</option>
-                                <option value="yes">Yes, I'll be there!</option>
-                                <option value="no">Unfortunately, I can't make it</option>
+                                <option value="yes">Yes, I'll/we'll be there!</option>
+                                <option value="no">Unfortunately, I/we can't make it</option>
                             </select>
+                        </div>
+
+                        <div class="form-group" id="guestCountGroup">
+                            <label for="guestCount">Number of Guests Attending *</label>
+                            <select id="guestCount" name="guestCount">
+                                <option value="">Please select...</option>
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                </select>
+                            <small>How many people are you responding for?</small>
                         </div>
 
                         <!-- Uncomment this section when you're ready to add meal choices -->
@@ -80,6 +90,9 @@ List any dietary requirements or allergies"></textarea>
                     </form>
 
                     <div class="rsvp-info">
+                        <h3>RSVP Deadline</h3>
+                        <p>Please respond by [DATE TBC]</p>
+                        
                         <h3>Questions?</h3>
                         <p>If you have any questions or issues with the RSVP form, please email us at [your email]</p>
                     </div>
@@ -97,7 +110,22 @@ List any dietary requirements or allergies"></textarea>
     </footer>
 
     <script>
-    <script>
+        // Show/hide guest count based on attendance selection
+        const attendanceSelect = document.getElementById('attendance');
+        const guestCountGroup = document.getElementById('guestCountGroup');
+        const guestCountSelect = document.getElementById('guestCount');
+
+        attendanceSelect.addEventListener('change', function() {
+            if (this.value === 'yes') {
+                guestCountGroup.style.display = 'block';
+                guestCountSelect.required = true;
+            } else {
+                guestCountGroup.style.display = 'none';
+                guestCountSelect.required = false;
+                guestCountSelect.value = '';
+            }
+        });
+
         // Handle form submission
         const form = document.getElementById('rsvpForm');
         const formStatus = document.getElementById('formStatus');
@@ -107,6 +135,9 @@ List any dietary requirements or allergies"></textarea>
             // This just provides user feedback
             formStatus.innerHTML = '<p class="success">Thank you! Your RSVP has been submitted.</p>';
         });
+
+        // Initialize form state
+        guestCountGroup.style.display = 'none';
     </script>
 </body>
 </html>
