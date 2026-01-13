@@ -116,24 +116,24 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 4.5em;
+    font-size: 3.5em;
     font-weight: 300;
-    margin-bottom: 200px;  /* Changed from 20px to 30px */
+    margin-bottom: 20px;  /* Changed from 20px to 30px */
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     color: var(--col-teal);
 }
 
 .hero-content .subtitle { /*wedding text */
-    font-size: 3.1em;
-    margin-bottom: 35px;  /* Changed from 15px to 25px */
+    font-size: 1.5em;
+    margin-bottom: 15px;  /* Changed from 15px to 25px */
     opacity: 1;
     color: var(--col-white);
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-content .date {
-    font-size: 1.9em;
-    opacity: 0.9;
+    font-size: 1.2em;
+    opacity: 0.8;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
