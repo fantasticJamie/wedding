@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
+<nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="schedule.html" class="nav-link">Schedule</a>
-            <a href="travel.html" class="nav-link">Travel & Stay</a>
-            <a href="rsvp.html" class="nav-link active">RSVP</a>
+            <a href="/" class="nav-link">Home</a>
+            <a href="/schedule.html" class="nav-link">Schedule</a>
+            <a href="/travel.html" class="nav-link">Travel & Stay</a>
+            <a href="/rsvp.html" class="nav-link">RSVP</a>
         </div>
     </nav>
 
@@ -30,12 +30,12 @@
                     
                     <!-- Replace YOUR_FORM_ID with your actual Formspree form ID -->
                     <!-- You'll get this after signing up at formspree.io -->
-                    <form action="https://formspree.io/f/mblnzrev" method="POST" id="rsvpForm">
+                     <form action="https://formspree.io/f/mblnzrev" method="POST" id="rsvpForm">
                         
                         <div class="form-group">
-                            <label for="name">Your Name(s) *</label>
-                            <input type="text" id="name" name="name" required placeholder="Full name or names if responding for multiple people">
-                            <small>If responding for you and a guest/partner, please include both names</small>
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Full name">
+                            <small>Please submit one form per person attending</small>
                         </div>
 
                         <div class="form-group">
@@ -47,19 +47,9 @@
                             <label for="attendance">Will you be attending? *</label>
                             <select id="attendance" name="attendance" required>
                                 <option value="">Please select...</option>
-                                <option value="yes">Yes, I'll/we'll be there!</option>
-                                <option value="no">Unfortunately, I/we can't make it</option>
+                                <option value="yes">Yes, I'll be there!</option>
+                                <option value="no">Unfortunately, I can't make it</option>
                             </select>
-                        </div>
-
-                        <div class="form-group" id="guestCountGroup">
-                            <label for="guestCount">Number of Guests Attending *</label>
-                            <select id="guestCount" name="guestCount">
-                                <option value="">Please select...</option>
-                                <option value="1">1 person</option>
-                                <option value="2">2 people</option>
-                                </select>
-                            <small>How many people are you responding for?</small>
                         </div>
 
                         <!-- Uncomment this section when you're ready to add meal choices -->
@@ -89,55 +79,57 @@ List any dietary requirements or allergies"></textarea>
                         <div id="formStatus"></div>
                     </form>
 
-                    <div class="rsvp-info">
-                        <h3>RSVP Deadline</h3>
-                        <p>Please respond by [DATE TBC]</p>
-                        
+                    <!-- <div class="rsvp-info">
                         <h3>Questions?</h3>
                         <p>If you have any questions or issues with the RSVP form, please email us at [your email]</p>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>Questions? Contact us at [your email]</p>
-            <p>&copy; 2025 - See you in Ibiza!</p>
-        </div>
-    </footer>
+<footer>
+    <div class="container">
+        <p>Questions? Contact us at <a href="mailto:hi@kateandjamie.wedding?subject=Wedding%20Question">hi@kateandjamie.wedding</a></p>
+        <p>&copy; 2027 - See you in Ibiza!</p>
+    </div>
+</footer>
 
-    <script>
-        // Show/hide guest count based on attendance selection
-        const attendanceSelect = document.getElementById('attendance');
-        const guestCountGroup = document.getElementById('guestCountGroup');
-        const guestCountSelect = document.getElementById('guestCount');
+<script>
+    // Handle form submission
+    const form = document.getElementById('rsvpForm');
+    const formStatus = document.getElementById('formStatus');
 
-        attendanceSelect.addEventListener('change', function() {
-            if (this.value === 'yes') {
-                guestCountGroup.style.display = 'block';
-                guestCountSelect.required = true;
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        // Show loading message
+        formStatus.innerHTML = '<p>Submitting...</p>';
+        
+        // Get form data
+        const formData = new FormData(form);
+        
+        try {
+            // Submit to Formspree
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                formStatus.innerHTML = '<p class="success">Thank you! Your RSVP has been submitted.</p>';
+                form.reset(); // Clear the form
             } else {
-                guestCountGroup.style.display = 'none';
-                guestCountSelect.required = false;
-                guestCountSelect.value = '';
+                formStatus.innerHTML = '<p class="error">Oops! There was a problem. Please try again or email us directly.</p>';
             }
-        });
-
-        // Handle form submission
-        const form = document.getElementById('rsvpForm');
-        const formStatus = document.getElementById('formStatus');
-
-        form.addEventListener('submit', function(e) {
-            // Formspree will handle the actual submission
-            // This just provides user feedback
-            formStatus.innerHTML = '<p class="success">Thank you! Your RSVP has been submitted.</p>';
-        });
-
-        // Initialize form state
-        guestCountGroup.style.display = 'none';
-    </script>
+        } catch (error) {
+            formStatus.innerHTML = '<p class="error">Oops! There was a problem. Please try again or email us directly.</p>';
+        }
+    });
+</script>
 </body>
 </html>
