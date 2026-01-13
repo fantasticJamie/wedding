@@ -118,7 +118,7 @@ nav {
 .hero-content h1 {
     font-size: 4.5em;
     font-weight: 300;
-    margin-bottom: 120px;  /* Changed from 20px to 30px */
+    margin-bottom: 200px;  /* Changed from 20px to 30px */
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     color: var(--col-teal);
 }
