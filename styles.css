@@ -286,23 +286,45 @@ section h2 {
 }
 
 .day-section {
-    margin-bottom: 60px;
-    padding: 40px;
-    background-color: var(--col-blue-light);
-    border-radius: 12px;
-    border-left: 5px solid var(--col-muted);
+    margin-bottom: 50px;
+    padding: 0;
+    background-color: var(--col-white);
+    border-radius: 16px;
+    border-left: none;
+    box-shadow: 0 4px 20px rgba(51, 45, 86, 0.08), 0 1px 4px rgba(51, 45, 86, 0.04);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.day-section.highlight {
-    background: linear-gradient(135deg, var(--col-blue-light) 0%, var(--col-blue-pale) 100%);
-    border: 2px solid var(--col-lime);
-    border-left: 5px solid var(--col-teal);
+.day-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(51, 45, 86, 0.12), 0 2px 8px rgba(51, 45, 86, 0.06);
 }
 
 .day-section h2 {
     text-align: left;
-    margin-bottom: 10px;
-    color: var(--col-deep);
+    margin: 0;
+    padding: 24px 36px;
+    color: var(--col-white);
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    background: var(--col-deep);
+}
+
+.day-section.highlight h2 {
+    background: var(--col-deep);
+}
+
+.day-section.highlight {
+    background-color: var(--col-white);
+    border: none;
+    border-left: none;
+    box-shadow: 0 4px 20px rgba(51, 45, 86, 0.08), 0 1px 4px rgba(51, 45, 86, 0.04);
+}
+
+.day-section.highlight:hover {
+    box-shadow: 0 8px 30px rgba(51, 45, 86, 0.12), 0 2px 8px rgba(51, 45, 86, 0.06);
 }
 
 .day-date {
@@ -314,13 +336,14 @@ section h2 {
 }
 
 .timeline {
-    margin-top: 30px;
+    margin: 0;
+    padding: 32px 36px;
 }
 
 .timeline-item {
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(51, 45, 86, 0.08);
 }
 
 .timeline-item:last-child {
@@ -338,11 +361,13 @@ section h2 {
 .timeline-item .event h3 {
     margin-bottom: 10px;
     color: var(--col-deep);
+    font-size: 1.25em;
 }
 
 .timeline-item .event p {
-    color: var(--col-deep);
+    color: var(--col-muted);
     margin-bottom: 8px;
+    line-height: 1.7;
 }
 
 .timeline-item .location {
