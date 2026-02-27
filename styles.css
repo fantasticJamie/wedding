@@ -38,6 +38,14 @@ body {
     line-height: 1.6;
     color: var(--col-deep);
     background-color: var(--col-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    background: linear-gradient(135deg, var(--col-deep) 0%, var(--col-muted) 100%);
 }
 
 .container {
