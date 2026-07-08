@@ -726,9 +726,24 @@ footer a:hover {
    Responsive & preferences
    --------------------------------------------------------- */
 @media (max-width: 768px) {
+    /* Stronger overlay on mobile: the photo is cropped tighter,
+       so brighter areas can sit right behind the text */
     .hero-with-image {
+        background-image:
+            linear-gradient(160deg, rgba(51, 45, 86, 0.95) 0%, rgba(78, 102, 136, 0.88) 100%),
+            url('images/hero-photo.jpg');
         padding: 110px 20px 90px;
         min-height: 440px;
+    }
+
+    .hero-content h1 {
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content .subtitle,
+    .hero-content .date,
+    .hero .eyebrow {
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
     }
 
     .nav-container {
