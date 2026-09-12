@@ -10,80 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* ---------------------------------------------------------
-           Worcester page only — fixed, faded background photo.
-           Scoped to .worcester-page so styles.css (shared with the
-           rest of the site) is untouched.
-           --------------------------------------------------------- */
-        body.worcester-page {
-            background-color: transparent;
-        }
-
-        .worcester-page .worcester-bg {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background-image:
-                linear-gradient(160deg, rgba(51, 45, 86, 0.85) 0%, rgba(78, 102, 136, 0.78) 100%),
-                url('images/worcester-cathedral.webp');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* The whole page sits on the same dark blue/purple-over-photo
-           background as the hero at the top — no light section
-           backgrounds breaking it up, all the way down */
-        .worcester-page .page-header,
-        .worcester-page .welcome,
-        .worcester-page .schedule,
-        .worcester-page .travel-info {
-            background: transparent;
-        }
-
-        /* Text that sits directly on that dark background (not inside
-           a solid white/mist card) needs to flip to light colours,
-           matching the hero's white/lime treatment */
-        .worcester-page .welcome h2,
-        .worcester-page .travel-info h2,
-        .worcester-page .travel-info h3 {
-            color: var(--col-white);
-        }
-
-        .worcester-page .welcome p,
-        .worcester-page .travel-info p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .worcester-page .welcome .when {
-            color: var(--col-lime);
-        }
-
-        .worcester-page .travel-info h2 {
-            border-bottom-color: rgba(255, 255, 255, 0.25);
-        }
-
-        .worcester-page .welcome h2,
-        .worcester-page .welcome p,
-        .worcester-page .welcome .when,
-        .worcester-page .travel-info h2,
-        .worcester-page .travel-info h3,
-        .worcester-page .travel-info p {
-            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .worcester-page .worcester-bg {
-                background-image:
-                    linear-gradient(160deg, rgba(51, 45, 86, 0.93) 0%, rgba(78, 102, 136, 0.88) 100%),
-                    url('images/worcester-cathedral.webp');
-            }
-        }
-    </style>
 </head>
-<body class="worcester-page">
-    <div class="worcester-bg"></div>
-
+<body>
     <header class="page-header">
         <span class="eyebrow">We're getting married</span>
         <h1>Kate &amp; Jamie</h1>
@@ -95,7 +23,7 @@
             <div class="container">
                 <h2>The Commandery &amp; The Danesbury, Worcester</h2>
                 <div class="rule"><span></span></div>
-                <p>We're getting married, and we would love nothing more than to celebrate with our favourite people. We would be thrilled if you could join us as we start our exciting new chapter</p>
+                <p>We're getting married, and we would love nothing more than to celebrate with our favourite people. We would be thrilled if you could join us as we start our exciting new chapter (thankfully a bank holiday weekend for extended recovery!).</p>
                 <p class="when">Saturday 1st May 2027 · Worcester</p>
             </div>
         </section>
@@ -159,14 +87,14 @@
             <div class="container">
                 <div class="info-section">
                     <h2>Accommodation</h2>
-                    <p>There are plenty of good airbnbs and booking.com apartments in Worcester</p>
-                    <p>If you prefer a hotel, we recommend these two central options:</p>
+                    <p>There are lots of good Airbnbs and apartments on Booking.com across Worcester city centre if you'd like to book a self-catering stay.</p>
+                    <p>If you prefer a hotel, we recommend these two central options — very convenient for both venues:</p>
 
                     <h3>Worcester Whitehouse Hotel</h3>
-                    <p>It has a gym, pool and bar of course! Really close to the station</p>
+                    <p>Located on Foregate Street right next to the train station. It features hotel rooms, an indoor pool, and an on-site bar and brasserie.</p>
 
                     <h3>Premier Inn Worcester City Centre</h3>
-                    <p>Right near the river and the venue.</p>
+                    <p>Located on New Road next to the cricket ground. It offers reliable, straightforward rooms and an on-site restaurant.</p>
                 </div>
             </div>
         </section>
